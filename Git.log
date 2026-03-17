@@ -1,0 +1,61 @@
+2026-03-17 08:41:27.188 [info] [main] Nivel de registro: Info
+2026-03-17 08:41:27.188 [info] [main] Validando git encontrado en: "C:\Program Files\Git\cmd\git.exe"
+2026-03-17 08:41:27.632 [info] [main] Usando git "2.53.0.windows.2" de "C:\Program Files\Git\cmd\git.exe"
+2026-03-17 08:41:27.632 [info] [Model][doInitialScan] Initial repository scan started
+2026-03-17 08:41:28.129 [info] > git rev-parse --show-toplevel [455ms]
+2026-03-17 08:41:29.774 [info] > git rev-parse --git-dir --git-common-dir --show-superproject-working-tree [543ms]
+2026-03-17 08:41:29.820 [info] [Model][openRepository] Opened repository (path): c:\Users\tibis\OneDrive\Imágenes\Saved Pictures
+2026-03-17 08:41:29.820 [info] [Model][openRepository] Opened repository (real path): c:\Users\tibis\OneDrive\Imágenes\Saved Pictures
+2026-03-17 08:41:29.821 [info] [Model][openRepository] Opened repository (kind): repository
+2026-03-17 08:41:29.839 [info] [Git][getRemotes] No remotes found in the git config file
+2026-03-17 08:41:30.294 [info] > git rev-parse --show-toplevel [456ms]
+2026-03-17 08:41:30.299 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/main refs/remotes/main [457ms]
+2026-03-17 08:41:30.300 [warning] [Git][getBranch] No such branch: main
+2026-03-17 08:41:30.357 [info] > git config --get commit.template [520ms]
+2026-03-17 08:41:30.644 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [277ms]
+2026-03-17 08:41:30.669 [info] > git rev-parse --show-toplevel [370ms]
+2026-03-17 08:41:30.671 [info] [Model][doInitialScan] Initial repository scan completed - repositories (1), closed repositories (0), parent repositories (0), unsafe repositories (0)
+2026-03-17 08:41:31.539 [info] > git config --local -l [848ms]
+2026-03-17 08:41:31.654 [info] > git status -z -uall [1292ms]
+2026-03-17 08:41:31.655 [info] > git show --textconv :index pagina web.html [976ms]
+2026-03-17 08:41:31.691 [info] > git ls-files --stage -- index pagina web.html [1005ms]
+2026-03-17 08:41:31.750 [info] > git check-ignore -v -z --stdin [1378ms]
+2026-03-17 08:41:31.766 [info] [Git][getRemotes] No remotes found in the git config file
+2026-03-17 08:41:31.954 [info] > git cat-file -s 7fc0d097ab2cb045af7b4e89653330ff1767de50 [260ms]
+2026-03-17 08:41:31.965 [info] > git config --get --local branch.main.remote [366ms]
+2026-03-17 08:41:31.966 [warning] [Git][config] git config failed: Failed to execute git
+2026-03-17 08:41:32.392 [info] > git config --get --local branch.main.merge [419ms]
+2026-03-17 08:41:32.392 [warning] [Git][config] git config failed: Failed to execute git
+2026-03-17 08:41:32.395 [info] > git ls-files --stage -- index pagina web.html [415ms]
+2026-03-17 08:41:32.397 [info] > git config --get commit.template [639ms]
+2026-03-17 08:41:32.398 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/main refs/remotes/main [632ms]
+2026-03-17 08:41:32.398 [warning] [Git][getBranch] No such branch: main
+2026-03-17 08:41:32.408 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/main refs/remotes/main [723ms]
+2026-03-17 08:41:32.409 [warning] [Git][getBranch] No such branch: main
+2026-03-17 08:41:32.410 [error] [GitHistoryProvider][resolveHEADMergeBase] Failed to resolve merge base for main: Error: No such branch: main.
+2026-03-17 08:41:32.781 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [374ms]
+2026-03-17 08:41:32.819 [info] > git status -z -uall [417ms]
+2026-03-17 08:41:32.831 [info] > git config --local -l [345ms]
+2026-03-17 08:41:32.880 [info] > git cat-file -s 7fc0d097ab2cb045af7b4e89653330ff1767de50 [482ms]
+2026-03-17 08:41:34.403 [info] > git config --get --local branch.main.remote [1566ms]
+2026-03-17 08:41:34.417 [warning] [Git][config] git config failed: Failed to execute git
+2026-03-17 08:41:35.392 [info] > git config --get --local branch.main.merge [970ms]
+2026-03-17 08:41:35.393 [warning] [Git][config] git config failed: Failed to execute git
+2026-03-17 08:41:35.394 [info] [Git][getRemotes] No remotes found in the git config file
+2026-03-17 08:41:36.422 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/main refs/remotes/main [1026ms]
+2026-03-17 08:41:36.422 [warning] [Git][getBranch] No such branch: main
+2026-03-17 08:41:36.423 [info] > git config --get commit.template [1719ms]
+2026-03-17 08:41:36.838 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [407ms]
+2026-03-17 08:41:36.940 [info] > git status -z -uall [513ms]
+2026-03-17 08:46:45.892 [info] > git ls-files --stage -- index pagina web.html [216ms]
+2026-03-17 08:46:46.001 [info] > git cat-file -s 7fc0d097ab2cb045af7b4e89653330ff1767de50 [104ms]
+2026-03-17 08:46:46.611 [info] > git ls-files --stage -- index pagina web.html [154ms]
+2026-03-17 08:46:46.789 [info] > git cat-file -s 7fc0d097ab2cb045af7b4e89653330ff1767de50 [171ms]
+2026-03-17 08:46:49.613 [info] > git ls-files --stage -- index pagina web.html [362ms]
+2026-03-17 08:46:49.734 [info] > git cat-file -s 7fc0d097ab2cb045af7b4e89653330ff1767de50 [116ms]
+2026-03-17 08:46:58.377 [info] > git ls-files --stage -- index pagina web.html [168ms]
+2026-03-17 08:46:58.489 [info] > git cat-file -s 7fc0d097ab2cb045af7b4e89653330ff1767de50 [108ms]
+2026-03-17 08:47:01.504 [info] > git ls-files --stage -- index pagina web.html [125ms]
+2026-03-17 08:47:01.625 [info] > git cat-file -s 7fc0d097ab2cb045af7b4e89653330ff1767de50 [117ms]
+2026-03-17 08:47:04.014 [info] > git ls-files --stage -- index pagina web.html [117ms]
+2026-03-17 08:47:04.099 [info] > git cat-file -s 7fc0d097ab2cb045af7b4e89653330ff1767de50 [81ms]
