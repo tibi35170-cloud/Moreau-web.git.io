@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>clear
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moreau - Impulsa tu Presencia Digital</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com" rel="stylesheet">
+    <!-- Font Awesome para iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com">
+    
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #0f172a;
+            --accent-color: #2b8bb4;
+            --bg-light: #f8fafc;
+            --text-main: #334155;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* --- Header & Navegación --- */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 1rem 5%;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--secondary-color);
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--primary-color);
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding: 0 5%;
+            margin-top: 60px;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            opacity: 0.9;
+        }
+
+        .btn-main {
+            background: var(--primary-color);
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.3s, background 0.3s;
+            display: inline-block;
+        }
+
+        .btn-main:hover {
+            background: var(--accent-color);
+            transform: translateY(-3px);
+        }
+
+        /* --- Secciones Generales --- */
+        section {
+            padding: 100px 10%;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 4rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            width: 60px;
+            height: 4px;
+            background: var(--primary-color);
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        /* --- Servicios (Cards) --- */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            text-align: center;
+            transition: 0.4s;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            border: 1px solid #eee;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .card i {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+        }
+
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 1.5rem;
+        }
+
+        /* --- Paquetes (Pricing) --- */
+        .pricing-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        .pricing-item {
+            background: var(--white);
+            padding: 3rem 2rem;
+            border-radius: 20px;
+            width: 300px;
+            text-align: center;
+            border: 2px solid transparent;
+            transition: 0.3s;
+        }
+
+        .pricing-item.featured {
+            border-color: var(--primary-color);
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(37, 99, 235, 0.1);
+        }
+
+        .price {
+            font-size: 3rem;
+            font-weight: 800;
+            margin: 1.5rem 0;
+            display: block;
+        }
+
+        /* --- Contacto --- */
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            background: white;
+            padding: 4rem;
+            border-radius: 30px;
+            box-shadow: 0 10px 50px rgba(0,0,0,0.05);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        input:focus, textarea:focus {
+            border-color: var(--primary-color);
+        }
+
+        /* --- Footer --- */
+        footer {
+            background: var(--secondary-color);
+            color: white;
+            text-align: center;
+            padding: 3rem;
+        }
+
+        /* --- Animaciones --- */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav { display: none; }
+            .hero-content h1 { font-size: 2.5rem; }
+            .contact-container { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Menú de Navegación -->
+    <header>
+        <a href="#" class="logo">
+            <i class="fas fa-rocket"></i> Moreau
+        </a>
+        <nav>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#paquetes">Paquetes</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Inicio -->
+    <section id="inicio" class="hero">
+        <div class="hero-content">
+            <h1>Domina los Buscadores con Estrategia SEO</h1>
+            <p>No solo buscamos visitas, buscamos resultados. Elevamos tu marca a la primera página de Google con técnicas avanzadas de optimización y contenido.</p>
+            <a href="#servicios" class="btn-main">Empezar ahora</a>
+        </div>
+    </section>
+
+    <!-- Servicios -->
+    <section id="servicios">
+        <h2 class="section-title">Nuestros Servicios</h2>
+        <div class="services-grid">
+            <div class="card">
+                <img src="https://images.unsplash.com" alt="SEO Técnico">
+                <i class="fas fa-search-plus"></i>
+                <h3>SEO Técnico</h3>
+                <p>Optimizamos la estructura de tu web, velocidad de carga y rastreabilidad para que Google te ame.</p>
+            </div>
+            <div class="card">
+                <img src="https://images.unsplash.com" alt="Contenidos">
+                <i class="fas fa-pen-nib"></i>
+                <h3>Estrategia de Contenidos</h3>
+                <p>Creamos artículos y textos que enganchan a tu audiencia y posicionan por palabras clave críticas.</p>
+            </div>
+            <div class="card">
+                <img src="https://images.unsplash.com" alt="Linkbuilding">
+                <i class="fas fa-link"></i>
+                <h3>Link Building</h3>
+                <p>Construimos autoridad para tu dominio mediante enlaces de alta calidad en sitios relevantes.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Paquetes -->
+    <section id="paquetes" style="background: #f1f5f9;">
+        <h2 class="section-title">Planes de Crecimiento</h2>
+        <div class="pricing-grid">
+            <div class="pricing-item">
+                <h3>Básico</h3>
+                <span class="price">$299</span>
+                <p>Ideal para negocios locales.</p>
+                <hr style="margin: 1.5rem 0; opacity: 0.2;">
+                <p>Auditoría Mensual</p>
+                <p>5 Palabras Clave</p>
+                <p>Optimización On-Page</p>
+                <br>
+                <a href="#contacto" class="btn-main" style="padding: 0.6rem 1.5rem;">Elegir</a>
+            </div>
+            <div class="pricing-item featured">
+                <h3>Profesional</h3>
+                <span class="price">$599</span>
+                <p>El más popular para PYMES.</p>
+                <hr style="margin: 1.5rem 0; opacity: 0.2;">
+                <p>SEO Técnico Avanzado</p>
+                <p>20 Palabras Clave</p>
+                <p>4 Artículos de Blog</p>
+                <br>
+                <a href="#contacto" class="btn-main" style="padding: 0.6rem 1.5rem;">Elegir</a>
+            </div>
+            <div class="pricing-item">
+                <h3>Empresarial</h3>
+                <span class="price">$999</span>
+                <p>Para marcas competitivas.</p>
+                <hr style="margin: 1.5rem 0; opacity: 0.2;">
+                <p>Estrategia Full-Stack</p>
+                <p>Keywords Ilimitadas</p>
+                <p>Soporte 24/7</p>
+                <br>
+                <a href="#contacto" class="btn-main" style="padding: 0.6rem 1.5rem;">Elegir</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacto -->
+    <section id="contacto">
+        <h2 class="section-title">Hablemos de tu Proyecto</h2>
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>¿Listo para subir de nivel?</h3>
+                <p style="margin: 1.5rem 0;">Déjanos tus datos y un especialista en SEO se pondrá en contacto contigo en menos de 24 horas.</p>
+                <p><i class="fas fa-envelope" style="color: var(--primary-color);"></i> contacto@seopro.com</p>
+                <p><i class="fas fa-phone" style="color: var(--primary-color); margin-top: 1rem;"></i> +1 234 567 890</p>
+                <div style="margin-top: 2rem; display: flex; gap: 1rem; font-size: 1.5rem;">
+                    <i class="fab fa-linkedin"></i>
+                    <i class="fab fa-twitter"></i>
+                    <i class="fab fa-instagram"></i>
+                </div>
+            </div>
+            <form id="contactForm">
+                <div class="form-group">
+                    <input type="text" placeholder="Nombre completo" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" placeholder="Correo electrónico" required>
+                </div>
+                <div class="form-group">
+                    <textarea rows="5" placeholder="Cuéntanos sobre tu sitio web..."></textarea>
+                </div>
+                <button type="submit" class="btn-main" style="border: none; width: 100%; cursor: pointer;">Enviar Mensaje</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 MOREAU Marketing Solutions. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- Scripts Interactivos -->
+    <script>
+        // 1. Scroll Suave para los enlaces del menú
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetSection = document.querySelector(targetId);
+                
+                window.scrollTo({
+                    top: targetSection.offsetTop - 70,
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // 2. Efecto de cambio de color en el header al hacer scroll
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.style.padding = '0.5rem 5%';
+                header.style.background = 'rgba(255, 255, 255, 0.98)';
+            } else {
+                header.style.padding = '1rem 5%';
+                header.style.background = 'rgba(255, 255, 255, 0.95)';
+            }
+        });
+
+        // 3. Animación simple al enviar el formulario
+        const contactForm = document.getElementById('contactForm');
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const btn = contactForm.querySelector('button');
+            const originalText = btn.innerText;
+            
+            btn.innerText = "¡Enviando...";
+            btn.style.background = "#22c55e"; // Color verde éxito
+            
+            setTimeout(() => {
+                alert("¡Gracias por contactarnos! Tu solicitud ha sido enviada con éxito.");
+                btn.innerText = originalText;
+                btn.style.background = "#2563eb";
+                contactForm.reset();
+            }, 1500);
+        });
+
+        // 4. Revelación de elementos al hacer scroll (Efecto WOW)
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = "1";
+                    entry.target.style.transform = "translateY(0)";
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.card, .pricing-item').forEach(el => {
+            el.style.opacity = "0";
+            el.style.transform = "translateY(30px)";
+            el.style.transition = "all 0.6s ease-out";
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
+<style>
+    /* Estilos del Chatbot de IA */
+    #ai-chatbot {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        width: 350px;
+        background: white;
+        border-radius: 20px;
+        box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        transform: translateY(20px);
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+        z-index: 9999;
+    }
+
+    #ai-chatbot.active {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .chat-header {
+        background: var(--primary-color);
+        color: white;
+        padding: 15px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    #chat-body {
+        height: 300px;
+        padding: 20px;
+        overflow-y: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        background: #f8fafc;
+    }
+
+    .msg {
+        max-width: 80%;
+        padding: 10px 15px;
+        border-radius: 15px;
+        font-size: 0.9rem;
+    }
+
+    .msg.bot {
+        background: #e2e8f0;
+        color: var(--secondary-color);
+        align-self: flex-start;
+        border-bottom-left-radius: 2px;
+    }
+
+    .msg.user {
+        background: var(--primary-color);
+        color: white;
+        align-self: flex-end;
+        border-bottom-right-radius: 2px;
+    }
+
+    .chat-footer {
+        padding: 15px;
+        border-top: 1px solid #eee;
+        display: flex;
+        gap: 10px;
+    }
+
+    .chat-footer input {
+        flex: 1;
+        padding: 8px 12px;
+        border: 1px solid #ddd;
+        border-radius: 20px;
+    }
+
+    /* Botón flotante para abrir IA */
+    #ai-launcher {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        width: 60px;
+        height: 60px;
+        background: var(--primary-color);
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        box-shadow: 0 5px 15px rgba(37, 99, 235, 0.4);
+        z-index: 10000;
+        transition: transform 0.3s;
+    }
+
+    #ai-launcher:hover { transform: scale(1.1); }
+</style>
+
+<!-- Interfaz del Chatbot -->
+<div id="ai-launcher">
+    <i class="fas fa-robot fa-lg"></i>
+</div>
+
+<div id="ai-chatbot">
+    <div class="chat-header">
+        <span><i class="fas fa-brain"></i> Asistente SEO IA</span>
+        <i class="fas fa-times" id="close-chat" style="cursor:pointer"></i>
+    </div>
+    <div id="chat-body">
+        <div class="msg bot">¡Hola! Soy tu consultor SEO virtual. ¿En qué puedo ayudarte hoy? (Prueba preguntando por: "keywords", "backlinks" o "auditoría")</div>
+    </div>
+    <form class="chat-footer" id="chat-form">
+        <input type="text" id="user-input" placeholder="Pregunta algo sobre SEO..." required>
+        <button type="submit" style="background:none; border:none; color:var(--primary-color); cursor:pointer">
+            <i class="fas fa-paper-plane"></i>
+        </button>
+    </form>
+</div>
+
+<script>
+    // Lógica de la Inteligencia Artificial de Marketing
+    const launcher = document.getElementById('ai-launcher');
+    const chatbot = document.getElementById('ai-chatbot');
+    const closeChat = document.getElementById('close-chat');
+    const chatForm = document.getElementById('chat-form');
+    const chatBody = document.getElementById('chat-body');
+    const userInput = document.getElementById('user-input');
+
+    // Base de conocimiento SEO (Simulación de IA)
+    const seoKnowledge = {
+        keywords: "Las palabras clave son los términos que los usuarios buscan en Google. Te recomiendo usar herramientas como Semrush o Ahrefs para encontrarlas.",
+        backlinks: "Los backlinks son enlaces de otros sitios hacia el tuyo. Actúan como 'votos de confianza' y aumentan tu autoridad rápidamente.",
+        auditoria: "Una auditoría SEO analiza la velocidad de carga, errores 404 y etiquetas meta. ¿Quieres que revisemos tu sitio?",
+        contenido: "El contenido es el rey. Google premia artículos largos, útiles y que respondan la intención de búsqueda del usuario.",
+        velocidad: "La velocidad de carga es crucial. Te sugiero optimizar tus imágenes y usar un sistema de caché.",
+        hola: "¡Hola! Soy la IA de SEOPRO. Estoy lista para optimizar tu presencia digital.",
+        gracias: "¡De nada! Recuerda que el SEO es una carrera de fondo, no de velocidad."
+    };
+
+    // Abrir/Cerrar Chat
+    launcher.onclick = () => {
+        chatbot.classList.add('active');
+        launcher.style.display = 'none';
+    };
+
+    closeChat.onclick = () => {
+        chatbot.classList.remove('active');
+        setTimeout(() => launcher.style.display = 'flex', 300);
+    };
+
+    // Procesamiento de mensajes
+    chatForm.onsubmit = (e) => {
+        e.preventDefault();
+        const message = userInput.value.toLowerCase();
+        
+        // Agregar mensaje de usuario
+        addMessage(userInput.value, 'user');
+        userInput.value = '';
+
+        // "Pensar" y responder
+        setTimeout(() => {
+            let response = "Interesante pregunta. Como IA de SEO, te sugiero analizar eso en nuestra sección de 'Servicios' o contactar a un experto para un análisis profundo.";
+            
+            // Buscar coincidencias en conocimiento
+            for (let key in seoKnowledge) {
+                if (message.includes(key)) {
+                    response = seoKnowledge[key];
+                    break;
+                }
+            }
+            addMessage(response, 'bot');
+        }, 600);
+    };
+
+    function addMessage(text, sender) {
+        const div = document.createElement('div');
+        div.className = `msg ${sender}`;
+        div.innerText = text;
+        chatBody.appendChild(div);
+        chatBody.scrollTop = chatBody.scrollHeight;
+    }
+
+    // --- MANTENER SCRIPTS ANTERIORES AQUÍ ---
+    // ()
+</script>
+
+<style>
+    /* Modal de Pago */
+    .payment-modal {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(15, 23, 42, 0.8);
+        display: none; /* Oculto por defecto */
+        justify-content: center;
+        align-items: center;
+        z-index: 20000;
+        backdrop-filter: blur(5px);
+    }
+
+    .payment-modal.active {
+        display: flex;
+        animation: fadeIn 0.3s ease;
+    }
+
+    .modal-content {
+        background: white;
+        padding: 2rem;
+        border-radius: 25px;
+        width: 90%;
+        max-width: 450px;
+        position: relative;
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    }
+
+    .modal-header {
+        text-align: center;
+        margin-bottom: 1.5rem;
+    }
+
+    .package-badge {
+        background: var(--bg-light);
+        color: var(--primary-color);
+        padding: 5px 15px;
+        border-radius: 20px;
+        font-weight: 700;
+        font-size: 0.8rem;
+    }
+
+    /* Opciones de Pago */
+    .payment-options {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .method-card {
+        border: 2px solid #f1f5f9;
+        padding: 15px;
+        border-radius: 15px;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    .method-card:hover {
+        border-color: var(--primary-color);
+        background: #f8fafc;
+    }
+
+    .method-card i {
+        font-size: 1.5rem;
+        width: 40px;
+        text-align: center;
+    }
+
+    .zinli-icon { color: #5d2de1; } /* Color corporativo Zinli */
+    .card-icon { color: #2563eb; }
+
+    /* Formulario de Tarjeta (Oculto inicialmente) */
+    #card-form {
+        display: none;
+        margin-top: 15px;
+        padding-top: 15px;
+        border-top: 1px solid #eee;
+    }
+
+    .btn-pay {
+        width: 100%;
+        background: var(--secondary-color);
+        color: white;
+        border: none;
+        padding: 12px;
+        border-radius: 10px;
+        margin-top: 15px;
+        font-weight: 600;
+        cursor: pointer;
+    }
+
+    .close-modal {
+        position: absolute;
+        top: 15px;
+        right: 20px;
+        font-size: 1.5rem;
+        cursor: pointer;
+        color: #94a3b8;
+    }
+</style>
+
+<!-- 2. Estructura HTML del Modal -->
+<div id="paymentModal" class="payment-modal">
+    <div class="modal-content">
+        <span class="close-modal" id="closePayment">&times;</span>
+        <div class="modal-header">
+            <span class="package-badge" id="selectedPackageName">Paquete Profesional</span>
+            <h2 style="margin-top:10px">Finalizar Pago</h2>
+            <p id="selectedPackagePrice" style="font-size: 1.5rem; font-weight: 800; color: var(--secondary-color)">$599</p>
+        </div>
+
+        <div class="payment-options">
+            <!-- Opción Zinli -->
+            <div class="method-card" onclick="processPayment('Zinli')">
+                <i class="fas fa-wallet zinli-icon"></i>
+                <div>
+                    <strong>Zinli</strong>
+                    <p style="font-size: 0.7rem; color: #64748b">Pago rápido con código/correo</p>
+                </div>
+            </div>
+
+            <!-- Opción Tarjeta -->
+            <div class="method-card" onclick="showCardForm()">
+                <i class="fas fa-credit-card card-icon"></i>
+                <div>
+                    <strong>Tarjeta de Crédito / Débito</strong>
+                    <p style="font-size: 0.7rem; color: #64748b">Visa, Mastercard, AMEX</p>
+                </div>
+            </div>
+
+            <!-- Formulario de Tarjeta Detallado -->
+            <div id="card-form">
+                <input type="text" placeholder="Número de tarjeta" style="margin-bottom: 10px;">
+                <div style="display: flex; gap: 10px;">
+                    <input type="text" placeholder="MM/AA">
+                    <input type="text" placeholder="CVV">
+                </div>
+                <button class="btn-pay" onclick="processPayment('Tarjeta')">Pagar Ahora</button>
+            </div>
+        </div>
+
+        <p style="text-align:center; font-size: 0.7rem; color: #94a3b8; margin-top: 20px;">
+            <i class="fas fa-lock"></i> Pagos encriptados de extremo a extremo
+        </p>
+    </div>
+</div>
+
+<!-- 3. Lógica JavaScript para la Pasarela -->
+<script>
+    const modal = document.getElementById('paymentModal');
+    const closeBtn = document.getElementById('closePayment');
+    const cardForm = document.getElementById('card-form');
+
+    // Función para abrir la pasarela desde los botones de paquetes
+    document.querySelectorAll('.pricing-item .btn-main').forEach(button => {
+        button.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            // Obtener datos del paquete clicado
+            const parent = this.parentElement;
+            const name = parent.querySelector('h3').innerText;
+            const price = parent.querySelector('.price').innerText;
+
+            document.getElementById('selectedPackageName').innerText = `Paquete ${name}`;
+            document.getElementById('selectedPackagePrice').innerText = price;
+            
+            modal.classList.add('active');
+        });
+    });
+
+    // Cerrar modal
+    closeBtn.onclick = () => {
+        modal.classList.remove('active');
+        cardForm.style.display = 'none';
+    };
+
+    window.onclick = (event) => {
+        if (event.target == modal) {
+            modal.classList.remove('active');
+            cardForm.style.display = 'none';
+        }
+    };
+
+    function showCardForm() {
+        cardForm.style.display = 'block';
+    }
+
+    // Simulación de procesamiento de pago
+    function processPayment(metodo) {
+        const price = document.getElementById('selectedPackagePrice').innerText;
+        const btn = event.currentTarget.closest('.btn-pay') || event.currentTarget;
+        
+        if(metodo === 'Zinli') {
+            alert(`Redirigiendo a Zinli para el pago de ${price}...`);
+        } else {
+            alert(`Procesando pago de ${price} con ${metodo}...`);
+        }
+
+        setTimeout(() => {
+            alert("¡Pago Exitoso! Bienvenido a Moreau. En breve te contactaremos.");
+            modal.classList.remove('active');
+            cardForm.style.display = 'none';
+        }, 2000);
+    }
+</script>
